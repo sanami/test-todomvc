@@ -8,22 +8,22 @@ It is intended for demonstration and tests only.
 Make sure you have ruby 1.9.3 (RVM) environment and Bundler installed. Install the 
 required gems using
 
-  bundle install
+    bundle install
 
 and run the server
 
-  bundle exec rails server
+    bundle exec rails server
 
 ## API
 
 The server implements the following JSON REST API:
 
-  GET /todos
-  GET /todos?since=<timestamp in format e.g. 2013-04-12T09:15:00Z>
-  GET /todos/:id
-  POST /todos
-  PATCH/PUT /todos/:id
-  DELETE /todos/:id
+    GET /todos
+    GET /todos?since=<timestamp in format e.g. 2013-04-12T09:15:00Z>
+    GET /todos/:id
+    POST /todos
+    PATCH/PUT /todos/:id
+    DELETE /todos/:id
 
 ## Client
 

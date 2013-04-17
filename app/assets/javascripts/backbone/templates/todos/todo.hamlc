@@ -1,0 +1,4 @@
+%td= @title
+%td= @completed
+%td
+  %a.destroy{:href => "#/#{@id}/destroy"} Destroy

@@ -42,3 +42,9 @@ end
 gem 'jquery-rails'
 gem 'rails-backbone'
 gem 'haml_coffee_assets'
+
+gem 'acts_as_paranoid'
+
+group :development, :test do
+  gem 'jasminerice'
+end

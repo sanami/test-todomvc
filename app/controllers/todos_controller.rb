@@ -2,12 +2,13 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    if params[:since]
-      @todos = Todo.where("updated_at >= ?", Time.zone.parse(params[:since]))
+    if params[:since].present?
+      since = Time.zone.parse(params[:since])
+      @todos = Todo.with_deleted.where("updated_at > ? OR deleted_at > ?", since, since)
     else
       @todos = Todo.all
     end
-    render json: @todos
+    render json: {todos: @todos, since: Time.now}
   end
 
   # GET /todos/1

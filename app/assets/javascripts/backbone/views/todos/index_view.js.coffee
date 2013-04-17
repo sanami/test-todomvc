@@ -7,7 +7,8 @@ class Todomvc.Views.Todos.IndexView extends Backbone.View
     "submit #new_todo": "onNewTodo"
 
   initialize: ->
-    @options.todos.bind('reset', @addAll)
+    @options.todos.on 'reset', @addAll
+    @options.todos.on 'add', @addOne
 
   # New item
   onNewTodo: (ev)->
@@ -22,9 +23,7 @@ class Todomvc.Views.Todos.IndexView extends Backbone.View
     @$("#new_todo")[0].reset();
 
     # Create model
-    @options.todos.create attrs,
-      success: (todo) =>
-        @addOne(todo)
+    @options.todos.create(attrs)
 
   addAll: =>
     @options.todos.each(@addOne)

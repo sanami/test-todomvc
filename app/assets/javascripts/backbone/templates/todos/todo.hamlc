@@ -1,3 +1,4 @@
+%td= @id
 %td= @title
 %td= @completed
 %td

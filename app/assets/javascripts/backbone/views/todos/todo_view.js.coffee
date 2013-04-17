@@ -11,12 +11,17 @@ class Todomvc.Views.Todos.TodoView extends Backbone.View
   initialize: ->
     # Redraw on model change
     @model.on 'change', @render
+    @model.on 'remove', @remove_view
 
   destroy: ->
+    pp 'destroy'
     @model.destroy()
-    this.remove()
 
     return false
+
+  remove_view: =>
+    pp 'remove'
+    @remove()
 
   render: =>
     @$el.html(@template(@model.toJSON() ))

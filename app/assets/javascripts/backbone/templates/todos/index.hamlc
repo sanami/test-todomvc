@@ -1,12 +1,12 @@
 %table#todos-table
   %thead
     %tr
+      %th Id
       %th Title
       %th Completed
       %th
   %tbody
 
-%br
 %br
 
 %form#new_todo
